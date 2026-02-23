@@ -1,0 +1,101 @@
+.navbar {
+    /* Fixed height to match your -5rem offset */
+    height: 5rem; 
+    width: 90vw;
+    /* Matches max-width of #intro for alignment */
+    max-width: 75rem; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem 0 2.5rem; /* Extra padding on the left for the logo */
+    margin: 1.5rem auto;
+    position: sticky;
+    top: 1.5rem;
+    z-index: 1000;
+    
+    /* Premium dark glassmorphism to match your brand */
+    background: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* Refined oval pill shape */
+    border-radius: 100px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+    height: 2.2rem;
+    width: auto;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.desktopMenu {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.desktopMenuListItem {
+    cursor: pointer;
+    color: #999;
+    font-size: 1rem;
+    font-weight: 700; /* Bolder look to match your screenshots */
+    transition: all 0.3s ease;
+    padding: 0.6rem 1.2rem;
+}
+
+.desktopMenuListItem:hover {
+    color: #fff;
+}
+
+/* Specific Cyan color for active state as seen in your image */
+.desktopMenuListItem.active {
+    color: #00dfd8;
+}
+
+/* Revamped "Premium Tech" Oval Button */
+.desktopMenuBtn {
+    background: #fff;
+    color: #000;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 2.2rem;
+    /* Perfect oval shape matches your 'Contact' screenshot */
+    border-radius: 100px;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: -0.2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.desktopMenuBtn:hover {
+    background: #00dfd8; /* Hover matches your brand cyan accent */
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 223, 216, 0.3);
+}
+
+.desktopMenuImg {
+    height: 1.2rem;
+    width: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        width: 95%;
+        padding: 0 1.5rem;
+        border-radius: 2rem;
+        top: 1rem;
+        background: rgba(15, 15, 15, 0.95);
+    }
+    .desktopMenu {
+        display: none; 
+    }
+}

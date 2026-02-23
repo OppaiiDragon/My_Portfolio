@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  background: transparent;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    /* Base color */
+    background: rgb(30, 30, 30); 
+    color: white;
+    
+    /* FIX: Changed overflow from hidden to visible to allow the paragraph to be seen */
+    overflow-x: hidden; 
+    overflow-y: auto; 
+    
+    /* Ensures the global background mesh stays consistent */
+    background-image: 
+        radial-gradient(circle at 50% 30%, rgba(0, 223, 216, 0.08) 0%, rgba(10, 10, 10, 1) 70%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 50px 50px, 50px 50px;
+    background-attachment: fixed;
+}

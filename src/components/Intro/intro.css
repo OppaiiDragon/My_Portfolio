@@ -1,0 +1,95 @@
+#intro {
+    height: 100vh;
+    width: 100vw;
+    max-width: 75rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    justify-content: flex-start; /* Keeps content at the top */
+    padding-top: 4rem; /* Reduced to move everything up */
+    text-align: center;     
+    padding-left: 2rem;
+    padding-right: 2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.imageContainer {
+    margin-bottom: 0.5rem; /* Tightened spacing */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg {
+    height: 9rem; /* Slightly smaller to save space */
+    width: 9rem;
+    border-radius: 50%; 
+    object-fit: cover;
+    border: 4px solid #00dfd8;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards, float 6s ease-in-out 0.8s infinite;
+}
+
+.hello {
+    font-size: 1.1rem;
+    color: #00dfd8;
+    margin: 0;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.2s forwards;
+}
+
+.introText {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0; /* Removed gaps */
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.4s forwards;
+}
+
+/* FIX: This applies the gradient color back to your name */
+.introName {
+    color: #00dfd8;
+    background: linear-gradient(to right, #00dfd8, #007cf0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.roleText {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: white;
+    margin: 0; /* Pulled up closer */
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.5s forwards;
+}
+
+.introPara {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+    max-width: 32rem;
+    color: #bdbdbd;
+    margin-top: 0.5rem; /* Smallest gap possible */
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.7s forwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@media screen and (max-height: 700px) {
+    .bg { height: 7rem; width: 7rem; }
+    .roleText { font-size: 2.2rem; }
+}

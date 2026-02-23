@@ -1,0 +1,123 @@
+
+.contactModalContent {
+    background: rgba(17, 17, 17, 0.85);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 5px solid #00dfd8; /* Matches your core accent color */
+    border-radius: 2rem;
+    padding: 3.5rem;
+    width: 95%;
+    max-width: 550px;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    animation: modalEntrance 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* contact.css */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Higher than Navbar and Skill cards */
+}
+
+.contactModalContent {
+    background: rgba(17, 17, 17, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 5px solid #00dfd8; /* Match your accent color */
+    border-radius: 2rem;
+    padding: 3.5rem;
+    z-index: 10000;
+}
+
+/* contact.css */
+
+/* Adjusting the "GET IN TOUCH" Header to be smaller */
+.contactModalContent .coolLetters {
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Reduced from the original 5rem */
+    line-height: 1.1;
+    margin-bottom: 2rem;
+}
+
+/* Centering the Footer */
+.modalFooter {
+    text-align: center; /* Centers the text */
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.modalFooter p {
+    color: #888;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Glassmorphism Contact Modal Base */
+.contactModalContent {
+    background: rgba(17, 17, 17, 0.85);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 5px solid #00dfd8;
+    border-radius: 2rem;
+    padding: 3.5rem;
+    width: 95%;
+    max-width: 550px;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    animation: modalEntrance 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.introText {
+    color: #ccc;
+    line-height: 1.6;
+    margin: 1.5rem 0 2rem 0;
+    font-size: 1.05rem;
+}
+
+.contactInfoGrid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.contactItem {
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    opacity: 0;
+    animation: fadeIn 0.5s ease var(--delay) forwards; /* Staggered entrance */
+}
+
+.contactItem label {
+    display: block;
+    color: #00dfd8; /* Matches technical core branding */
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+}
+
+/* Specific Entrance for Contact Modal */
+@keyframes modalEntrance {
+    from { 
+        opacity: 0; 
+        transform: scale(0.9) translateY(40px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: scale(1) translateY(0); 
+    }
+}
+
+/* Ensure fadeIn is available if not in global CSS */
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
