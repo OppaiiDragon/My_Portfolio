@@ -1,30 +1,26 @@
-.navbar {
-    /* Fixed height to match your -5rem offset */
+.navbar {  
     height: 5rem; 
     width: 90vw;
-    /* Matches max-width of #intro for alignment */
     max-width: 75rem; 
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1.5rem 0 2.5rem; /* Extra padding on the left for the logo */
+    padding: 0 1.5rem 0 2.5rem;
     margin: 1.5rem auto;
     position: sticky;
     top: 1.5rem;
     z-index: 1000;
-    
-    /* Premium dark glassmorphism to match your brand */
     background: rgba(18, 18, 18, 0.8);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    /* Refined oval pill shape */
     border-radius: 100px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
 }
 
 .logo {
-    height: 2.2rem;
+    height: 1.5rem;
     width: auto;
     cursor: pointer;
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -36,15 +32,16 @@
 
 .desktopMenu {
     display: flex;
-    gap: 1rem;
+    gap: 8px;
     align-items: center;
 }
 
 .desktopMenuListItem {
     cursor: pointer;
     color: #999;
-    font-size: 1rem;
-    font-weight: 700; /* Bolder look to match your screenshots */
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin: 0;
     transition: all 0.3s ease;
     padding: 0.6rem 1.2rem;
 }
@@ -53,47 +50,66 @@
     color: #fff;
 }
 
-/* Specific Cyan color for active state as seen in your image */
 .desktopMenuListItem.active {
     color: #00dfd8;
 }
 
-/* Revamped "Premium Tech" Oval Button */
 .desktopMenuBtn {
     background: #fff;
     color: #000;
     border: none;
     display: flex;
     align-items: center;
-    padding: 0.5rem 1rem;
-    /* Perfect oval shape matches your 'Contact' screenshot */
+    padding: 10px 20px; /* Reduced from original to help fit mobile */
     border-radius: 100px;
     cursor: pointer;
     font-weight: 800;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     letter-spacing: -0.2px;
+    min-width: max-content; 
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .desktopMenuBtn:hover {
-    background: #00dfd8; /* Hover matches your brand cyan accent */
+    background: #00dfd8;
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 223, 216, 0.3);
 }
 
-.desktopMenuImg {
-    height: 1.2rem;
-    width: 1.2rem;
-    margin-right: 0.5rem;
-}
-
-@media screen and (max-width: 480px) {
-    .desktopMenu {
-        display: flex;          
-        flex-direction: row;    
-        gap: 1rem;              
+@media screen and (max-width: 768px) {
+    .navbar {
+        width: 95vw;          /* Uses more width on small screens */
+        height: 4rem;         /* Slightly shorter height */
+        padding: 0 1rem;      /* Tighter side padding */
+        margin: 1rem auto;
+        justify-content: space-between;
     }
+
+    .logo {
+        height: 1.2rem;       /* Smaller logo to save space */
+    }
+
     .desktopMenu {
-        display: none; 
+        display: flex !important; /* Forces the links to be visible */
+        overflow-x: auto;         /* Allows swiping if links are too wide */
+        white-space: nowrap;      /* Keeps links on one line */
+        scrollbar-width: none;    /* Hides scrollbar (Firefox) */
+        flex: 1;                  /* Takes up the middle space */
+        justify-content: center;
+        padding: 0 5px;
+    }
+
+    .desktopMenu::-webkit-scrollbar {
+        display: none;            /* Hides scrollbar (Chrome/Safari/Mobile) */
+    }
+
+    .desktopMenuListItem {
+        font-size: 0.7rem;        /* Smaller text for phone */
+        padding: 0.5rem 0.6rem;   /* Tighter spacing */
+    }
+
+    .desktopMenuBtn {
+        padding: 6px 12px;        /* Shrunk button size */
+        font-size: 0.65rem;
     }
 }

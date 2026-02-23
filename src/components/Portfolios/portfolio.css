@@ -58,26 +58,29 @@
     margin-bottom: 1.5rem;
 }
 
-/* The container "box" for the project details */
+/* --- CENTERED PROJECT DETAILS SECTION --- */
+
 .projectDetailsOverlay {
-    margin-top: 2rem;
+    margin: 2rem auto 0 auto; /* Centers the box itself horizontally */
     padding: 1.5rem;
     background: rgba(255, 255, 255, 0.02);
     border-radius: 12px;
     border: 1px solid rgba(0, 223, 216, 0.2);
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centers the image container inside */
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
     animation: fadeInUp 0.5s ease forwards;
 }
 
-/* The inner box that holds the pictures */
 .projectImageContainer {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Creates a 2-column box layout */
-    gap: 15px; /* Spacing between the pictures */
-    max-width: 500px; /* Limits the overall box size */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for desktop */
+    gap: 15px;
+    width: 100%;
+    justify-items: center; /* Centers images within their grid cells */
 }
-
 
 .detailImg {
     width: 100%; 
@@ -107,4 +110,32 @@
 
 .workBtn:hover {
     background: #00dfd8;
+}
+
+/* --- MOBILE RESPONSIVENESS FOR HONOR X7c --- */
+
+@media screen and (max-width: 480px) {
+    .projectDetailsOverlay {
+        padding: 1rem;
+        width: 95%; /* Provides a consistent margin on phone screens */
+    }
+
+    .projectImageContainer {
+        /* Stacks images in 1 column so they are easier to see on mobile */
+        grid-template-columns: 1fr; 
+        gap: 12px;
+    }
+
+    .detailImg {
+        height: 180px; /* Makes images slightly taller since they occupy full width */
+        max-width: 100%;
+    }
+
+    .worksTitle {
+        font-size: 2rem;
+    }
+
+    .worksItem {
+        padding: 1.5rem;
+    }
 }
