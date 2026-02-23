@@ -87,7 +87,7 @@
     margin-right: 0.5rem;
 }
 
-@media screen and (max-width: 325px){
+@media screen and (max-width: 480px) {
     .desktopMenu {
         display: flex;          
         flex-direction: row;    
